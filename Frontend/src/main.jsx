@@ -5,13 +5,11 @@ import App from './App.jsx'
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { ClerkProvider } from '@clerk/clerk-react';
-
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
+import conf from './conf'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider publishableKey={conf.clerkPublishableKey}>
       <Provider store={store}>
         <App />
       </Provider>
